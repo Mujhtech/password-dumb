@@ -1,12 +1,32 @@
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:password_dumb/password_dumb.dart';
 
 void main() {
-  test('adds one to input values', () {
-    final calculator = Calculator();
-    expect(calculator.addOne(2), 3);
-    expect(calculator.addOne(-7), -6);
-    expect(calculator.addOne(0), 1);
+  final List<String> validPassword = [
+    "w2\$EVa.B",
+    ";VxA5Y?<",
+    "[sB5fs#X",
+    "<H}Np@9W",
+    "R&e4N/&@"
+  ];
+  final List<String> dumbPassword = [
+    '123456',
+    'password',
+    '12345678',
+    'qwerty',
+    '123456789'
+  ];
+  test('Validate valid password', () {
+    for (var actual in validPassword) {
+      expect(PasswordDumb.validate(actual), equals(false),
+          reason: 'Password: ' + actual.toString());
+    }
+  });
+
+  test('Validate dumb Password', () {
+    for (var actual in dumbPassword) {
+      expect(PasswordDumb.validate(actual), equals(true),
+          reason: 'Password: ' + actual);
+    }
   });
 }

@@ -1,39 +1,54 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Password Dumb
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+A simple (but correct) Dart class to check if password is dumb, also can be use to generate strong password.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## Installation
 
-## Features
+This package requires the latest version of [Dart](https://www.dartlang.org/). You can download the latest and greatest [here](https://www.dartlang.org/tools/sdk#install).
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+### 1. Depend on it
 
-## Getting started
+Add this to your package's `pubspec.yaml` file:
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```yaml
+dependencies:
+    password_dumb: '^2.0.1'
+```
+
+
+#### 2. Install it
+
+You can install packages from the command line:
+
+```bash
+$ pub get
+..
+```
+
+Alternatively, your editor might support pub. Check the docs for your editor to learn more.
+
+#### 3. Import it
+
+Now in your Dart code, you can use:
+
+```Dart
+import 'package:password_dumb/password_dumb.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+Read the unit tests under `test`, or see code example below:
 
-```dart
-const like = 'sample';
+```Dart
+void main() {
+
+    var password = "12345678";
+
+    assert(PasswordDumb.validate(password));
+}
 ```
 
-## Additional information
+## Tips
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+You can also use this repo as a template for creating Dart packages, just clone the repo and start hacking :) 
