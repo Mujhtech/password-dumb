@@ -13,7 +13,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-    password_dumb: '^2.0.1'
+    password_dumb: '^0.0.1'
 ```
 
 
